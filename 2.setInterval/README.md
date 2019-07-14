@@ -13,12 +13,26 @@
   
   <input type="text" id="result">
   
-  <input type="button" value="开始" >
-  <input type="button" value="结束" >
+  <input type="button" value="开始" onclick="nzbg(this)" >
+  <input type="button" value="结束" onclick="nzbg(this)">
   
   <script>
       // write your code here
       // ......
+      function nzbg(obj)
+         {
+          var a = document.getElementById("result");
+          time = new Date().toLocaleString();
+          a.innerHTML = time;
+          if (obj.value == "开始计时")
+          {
+           nz_bg = window.setInterval("nzbg()",1000);
+          }
+          if (obj.value == "结束计时")
+          {
+           nz_bg = window.clearInterval(nz_bg);
+          }
+         }
   </script>
   </body>
   </html>
